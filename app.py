@@ -5,7 +5,7 @@ import ConfigParser
 from flask import Flask
 from flask import request
 from flask import url_for
-from twilio.rest import TwilioRestClient
+from twilio.rest import Client
 import phonenumbers as ph
 import sendgrid
 import simplejson
@@ -30,7 +30,7 @@ except:
 
 app = Flask(__name__)
 konf = Konfig()
-twilio_api = TwilioRestClient()
+twilio_api = Client()
 sendgrid_api = sendgrid.SendGridClient(konf.sendgrid_username,
                                        konf.sendgrid_password)
 
